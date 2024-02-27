@@ -1,3 +1,5 @@
+import type { Timestamp } from 'firebase-admin/firestore';
+
 export type ID = unknown;
 
 export type User = {
@@ -5,11 +7,14 @@ export type User = {
     favorites: ID[];
 };
 
-export type Favorite = {
+export type Favorite = Record & {
     ID: ID;
     type: "youtube";
     path: string;
     blurb: string;
-    createdDate: string;
-    lastUpdated: string;
+};
+
+export type Record = {
+    createdDate: Timestamp;
+    lastUpdated: Timestamp;
 }
