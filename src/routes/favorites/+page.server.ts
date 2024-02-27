@@ -1,12 +1,31 @@
-import type { Actions } from './$types';
+import type { Actions, PageServerLoad } from './$types';
 
 import { firestore } from "$lib/firebase/firebase.admin";
 import { Timestamp } from 'firebase-admin/firestore';
 import type { Favorite } from '$lib/data-model';
 import type { FavoriteFormData } from '$lib/view-model';
 
-
 const FavoritesRef = firestore.collection("/favorites");
+export const load: PageServerLoad = async () => {
+
+
+    const snapshot = await FavoritesRef.get();
+
+    const feed: Favorite[] = Array.from(snapshot.docs).map( doc => {
+        const data: Favorite = doc.data() as Favorite;
+        console.log(data);
+        data.createdDate = (data.createdDate as Timestamp).toDate();
+        data.lastUpdated = (data.lastUpdated as Timestamp).toDate();
+        return data;
+    });
+    console.log(feed);
+
+	return {
+        feed,
+	};
+};
+
+
 
 const isFavorite = (data: Partial<Favorite>): data is FavoriteFormData => {
 

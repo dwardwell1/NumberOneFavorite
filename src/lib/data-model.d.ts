@@ -15,6 +15,6 @@ export type Favorite = Record & {
 };
 
 export type Record = {
-    createdDate: Timestamp;
-    lastUpdated: Timestamp;
+    createdDate: Timestamp|Date;
+    lastUpdated: Timestamp|Date;
 }

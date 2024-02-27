@@ -19,9 +19,6 @@
     font-family: "Cinzel", serif;
     background-color: #224;
     color: #bbb;
-    display: grid;
-    place-content: center;
-    height: 50vh;
 }
 
 :global(.cinzel-400) {
