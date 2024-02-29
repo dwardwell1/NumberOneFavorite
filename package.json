@@ -39,6 +39,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-node": "^4.0.1",
 		"firebase": "^10.8.0",
-		"firebase-admin": "^12.0.0"
+		"firebase-admin": "^12.0.0",
+		"the-new-css-reset": "^1.11.2"
 	}
 }
