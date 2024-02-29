@@ -1,6 +1,13 @@
-# create-svelte
+# NumberOneFavorite
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+
+## Firebase Credentials
+
+Setup:
+
+1. Will need to create a file within this directory
+2. Will be injected into `dev` process as `GOOGLE_APPLICATION_CREDENTIALS`.
 
 ## Creating a project
 

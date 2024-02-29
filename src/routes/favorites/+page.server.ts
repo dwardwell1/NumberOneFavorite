@@ -8,7 +8,6 @@ import type { FavoriteFormData } from '$lib/view-model';
 const FavoritesRef = firestore.collection("/favorites");
 export const load: PageServerLoad = async () => {
 
-
     const snapshot = await FavoritesRef.get();
 
     const feed: Favorite[] = Array.from(snapshot.docs).map( doc => {
