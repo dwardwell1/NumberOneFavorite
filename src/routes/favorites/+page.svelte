@@ -1,21 +1,19 @@
 <script lang="ts">
 	import AddFavorite from "$lib/components/AddFavorite.svelte";
+	import FavoriteListItem from "$lib/components/FavoriteListItem.svelte";
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
 </script>
 
-<h1>Favorites</h1>
+<h1>Feed</h1>
 
 <div class="layout">
 	<div class="feed">
 		{#each data.feed as feed}
-			<div>
-				<h2>{feed.path}</h2>
-				<p>{feed.blurb}</p>
-			</div>
+			<FavoriteListItem favorite={feed} />
 		{:else}
-			<p>No items</p>
+			<p>No items in feed</p>
 		{/each}
 	</div>
 	<div class="detail">
@@ -33,9 +31,7 @@
 	}
 
 	.feed {
-		padding: 1rem 1rem;
-		height: 100%;
-		overflow-y: scroll;
+
 	}
 
 	.detail {
