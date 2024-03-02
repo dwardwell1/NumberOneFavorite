@@ -1,0 +1,8 @@
+:root {
+    --link: #c16;
+    --link-visited: #c16;
+
+    --nav-link-color: var(--link);
+    --nav-item-bg: #f390af;
+    --nav-bg: #f3a5be;
+}

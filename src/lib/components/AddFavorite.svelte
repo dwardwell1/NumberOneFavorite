@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { PageData, ActionData } from "./$types";
-	import { page } from "$app/stores";
+	import type { PageData, ActionData } from './$types';
+	import { page } from '$app/stores';
 
 	let data: PageData;
 	let form: ActionData = $page.form;
@@ -10,21 +10,15 @@
 
 <form method="POST" action="/favorites?/add">
 	<fieldset class="form-group">
-		<label for="type">
-			Type
-		</label>
+		<label for="type"> Type </label>
 		<input id="type" name="type" type="text" value="youtube" readonly />
 	</fieldset>
 	<fieldset class="form-group">
-		<label for="path">
-			Path
-		</label>
+		<label for="path"> Path </label>
 		<input id="path" name="path" type="text" minlength={0} />
 	</fieldset>
 	<fieldset class="form-group">
-		<label for="blurb">
-			Blurb
-		</label>
+		<label for="blurb"> Blurb </label>
 		<textarea id="blurb" name="blurb" placeholder="Say something about this"></textarea>
 	</fieldset>
 
@@ -49,9 +43,13 @@
 		margin-bottom: 0.5em;
 	}
 
+	input {
+		display: block;
+	}
+
 	label {
 		font-size: 1rem;
-		margin-bottom:0.25em;
+		margin-bottom: 0.25em;
 		display: block;
 	}
 

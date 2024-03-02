@@ -6,29 +6,32 @@
 	/* optional imports that use the props */
 	import "open-props/src/extra/normalize.css";
 	import "open-props/src/extra/buttons.css";
+	import "$lib/styles/open-props.css";
+	import "$lib/styles/global.css";
+	import NavLink from "$lib/components/NavLink.svelte";
 
 	export let isAuthenticated: boolean = true;
 </script>
 
 <div class="layout">
 	<nav class="nav-container">
-		<ul class="navmenu unstyled">
+		<ul class="nav-menu unstyled">
 			<li>
-				<a class="nav-item" href="/">Home</a>
+				<NavLink href="/">Home</NavLink>
 			</li>
 			<li>
-				<a class="nav-item" href="/favorites">Feed</a>
+				<NavLink href="/favorites">Feed</NavLink>
 			</li>
 			<li>
-				<a class="nav-item" href="/about">About</a>
+				<NavLink href="/about">About</NavLink>
 			</li>
 			{#if isAuthenticated}
 				<li>
-					<a class="nav-item" href="/account">Account</a>
+					<NavLink href="/account">Account</NavLink>
 				</li>
 			{:else}
 				<li>
-					<a class="nav-item" href="/account">Login</a>
+					<NavLink href="/Account">Login</NavLink>
 				</li>
 			{/if}
 		</ul>
@@ -40,19 +43,6 @@
 </div>
 
 <style>
-	:root {
-		--link: #32a;
-		--link-visited: #43b;
-	}
-
-	:global(h1, h2) {
-		margin-bottom: 1rem;
-	}
-	
-	:global(body) {
-		display: grid;
-	}
-
 	.container {
 		padding: 2rem 2rem;
 		display: grid;
@@ -62,30 +52,11 @@
 		height: 100%;
 	}
 
-	.navmenu {
+	.nav-menu {
 		display: flex;
 		gap: 1rem;
 		justify-content: center;
-		background-color: #f3a5be;
-	}
-
-	.unstyled {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.nav-item {
-		margin: 2px 2px;
-		padding: 0.5rem 1rem;
-		border-radius: 6px;
-		display: block;
-	}
-
-	.nav-item:hover,
-	.nav-item:focus {
-		background-color: #f390af;
-		text-decoration-color: #f390af;
+		background-color: var(--nav-bg);
 	}
 
 	.layout {
@@ -94,7 +65,7 @@
 	}
 
 	@media screen and (min-width: 60rem) {
-		.navmenu {
+		.nav-menu {
 			display: grid;
 			place-content: center;
 			width: auto;
