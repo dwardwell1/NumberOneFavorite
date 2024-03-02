@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "phoenisx.cssvar",
+        "esbenp.prettier-vscode",
+        "svelte.svelte-vscode"
+    ]
+}

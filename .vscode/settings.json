@@ -2,5 +2,17 @@
     "cSpell.words": [
         "firestore"
     ],
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "cssvar.files": [
+        "./node_modules/open-props/open-props.min.css",
+        // if you have an alternative path to where your styles are located
+        // you can add it in this array of files
+        "../src/lib/styles/open-props.css"
+    ],
+    "cssvar.ignore": [],
+    "cssvar.extensions": [
+        "css",
+        "ts",
+        "svelte"
+    ]
 }
